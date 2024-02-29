@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 
-const font = localFont({src : "/fonts/GeneralSans-Variable.woff2"})
+const font = localFont({ src: "/fonts/GeneralSans-Variable.woff2" });
 
 export const metadata: Metadata = {
   title: "Arun Kumar | Creative Designer & Full Stack Developer",

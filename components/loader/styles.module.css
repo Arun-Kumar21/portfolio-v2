@@ -1,0 +1,15 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #0C0C0B;
+  font-size: 3rem;
+  font-weight: 600;
+}
