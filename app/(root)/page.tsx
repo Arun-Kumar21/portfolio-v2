@@ -6,10 +6,14 @@ import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Loader from "@/components/loader";
 import LandingPage from "@/components/landing-page";
+import About from "@/components/About";
+import Section from "@/components/dark-section";
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  const [theme, setTheme] = useState<string>("light");
 
   useEffect(() => {
     setIsMounted(true);
@@ -25,6 +29,7 @@ export default function Home() {
   }
 
   const lenis = new Lenis();
+
   function raf(time: any) {
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -33,12 +38,21 @@ export default function Home() {
   requestAnimationFrame(raf);
 
   return (
-    <main>
-      <AnimatePresence mode="wait" >
-        {isLoading && <Loader />}
-      </AnimatePresence>
+    <main className="w-full h-full">
+      <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence>
 
-    <LandingPage />
+      {!isLoading && (
+        <>
+          <section className={`${theme}`}>
+            <Section theme="light" toggleTheme={setTheme}>
+              <LandingPage />
+            </Section>
+            <Section theme="dark" toggleTheme={setTheme}>
+              <About />
+            </Section>
+          </section>
+        </>
+      )}
     </main>
   );
 }
