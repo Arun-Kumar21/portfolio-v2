@@ -8,11 +8,9 @@ interface ButtonProps {
 }
 
 export default function Button({ children }: ButtonProps) {
-
   const circle = useRef(null);
   let timeline = useRef<any>(null);
   let timeoutId: any = null;
-
 
   useEffect(() => {
     timeline.current = gsap.timeline({ paused: true });
@@ -43,7 +41,9 @@ export default function Button({ children }: ButtonProps) {
   return (
     <Magnetic>
       <div
-        className={"py-2 px-8 sm:py-[15px] sm:px-[60px] rounded-[3em] border cursor-pointer flex items-center justify-center relative  group"}
+        className={
+          "py-2 px-8 sm:py-[15px] sm:px-[60px] rounded-[3em] border-neutral-800 border cursor-pointer flex items-center justify-center relative  group"
+        }
         style={{ overflow: "hidden" }}
         onMouseEnter={() => {
           manageMouseEnter();
@@ -52,12 +52,12 @@ export default function Button({ children }: ButtonProps) {
           manageMouseLeave();
         }}
       >
-        <div className="group-hover:text-white z-10 transition-colors duration-500 ease-in-out delay-200 relative">
+        <div className="group-hover:text-white z-10 transition-colors duration-300 ease-in-out relative">
           {children}
         </div>
         <div
           ref={circle}
-          style={{ backgroundColor : "#455CE9"}}
+          style={{ backgroundColor: "#81B29A" }}
           className="w-[100%] h-[150%] rounded-[50%] top-[100%] absolute"
         ></div>
       </div>

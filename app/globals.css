@@ -4,6 +4,6 @@
 
 
 * {
-  @apply transition-colors;
+  @apply transition-[background-color];
   @apply duration-500;
 }

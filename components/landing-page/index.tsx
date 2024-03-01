@@ -28,7 +28,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="w-full h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-2 lg:px-16 md:px-4 relative">
+    <div className="w-full bg-[#E2E2DD] selection:bg-[#e78b71] dark:bg-[#0E0E0C] dark:text-[#D1D1C7] text-[#3A3733] h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-2 lg:px-16 md:px-4 relative">
       <div className="h-3/4 w-full md:px-8 flex flex-col-reverse sm:flex-row justify-center">
         <div className="w-full h-full flex flex-col justify-end ">
           <motion.h1
