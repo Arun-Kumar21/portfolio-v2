@@ -6,6 +6,7 @@ import Button from "../button";
 import Link from "next/link";
 import Image from "next/image";
 import { letterAnimation, opacity, textUp } from "./anim";
+import { MaskContainer } from "../image-mask";
 
 const LandingPage = () => {
   const getChars = (word: string) => {
@@ -57,14 +58,29 @@ const LandingPage = () => {
             initial="initial"
             animate="animate"
           >
-            <Image
-              src={"/images/pic.jpeg"}
-              alt=""
-              width={400}
-              height={500}
-              quality={100}
-              className="object-cover relative w-full h-full"
-            />
+            <MaskContainer
+              revealSize={500}
+              revealElement={
+                <Image
+                  src={"/images/pic2.jpg"}
+                  alt=""
+                  width={400}
+                  height={500}
+                  quality={100}
+                  draggable={false}
+                  className="object-cover relative w-full h-full"
+                />
+              }
+            >
+              <Image
+                src={"/images/pic.jpeg"}
+                alt=""
+                width={400}
+                height={500}
+                quality={100}
+                className="object-cover relative w-full h-full"
+              />
+            </MaskContainer>
           </motion.div>
         </div>
       </div>

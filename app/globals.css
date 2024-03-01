@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+hmtl {
+  scroll-behavior: smooth;
+}
+
 * {
   @apply transition-[background-color];
   @apply duration-500;
