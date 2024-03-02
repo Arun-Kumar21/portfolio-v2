@@ -1,7 +1,7 @@
 "use client";
 
-import React, { ReactNode } from "react";
-import { motion } from "framer-motion";
+import React, { ReactNode, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "../button";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,23 +28,37 @@ const LandingPage = () => {
     return chars;
   };
 
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["end end", "end start"],
+  });
+
+  const textMove = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const imageMove = useTransform(scrollYProgress, [0, 1], [0, -100]);
+
   return (
-    <div className="w-full bg-[#E2E2DD] selection:bg-[#e78b71] dark:bg-[#0E0E0C] dark:text-[#D1D1C7] text-[#3A3733] h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-2 lg:px-16 md:px-4 relative">
+    <div
+      ref={container}
+      className="w-full bg-[#E2E2DD] dark:bg-[#0E0E0C] dark:text-[#D1D1C7] text-[#3A3733] h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-2 lg:px-16 md:px-4 relative"
+    >
       <div className="h-3/4 w-full md:px-8 flex flex-col-reverse sm:flex-row justify-center">
         <div className="w-full h-full flex flex-col justify-end ">
           <motion.h1
             className="text-[3rem] md:text-[3.5rem] lg:text-[8vw] font-medium overflow-hidden leading-[1] my-2 flex whitespace-break-spaces"
             initial="initial"
             animate="animate"
+            style={{ y: textMove }}
           >
             {getChars("Arun Kumar")}
           </motion.h1>
           <motion.p
-            className="text-[1.5rem] md:text-[1.5rem] lg:text-[3rem] overflow-hidden"
+            className="text-[1.5rem] md:text-[1.5rem] lg:text-[3rem] overflow-hidden leading-none"
             variants={textUp}
             initial="initial"
             animate="animate"
             exit="exit"
+            style={{ y: textMove }}
           >
             Passionate learner : Full-Stack Developer venturing into the realm
             of AI
@@ -57,6 +71,7 @@ const LandingPage = () => {
             variants={textUp}
             initial="initial"
             animate="animate"
+            style={{ y: imageMove }}
           >
             <MaskContainer
               revealSize={500}

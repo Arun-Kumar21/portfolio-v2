@@ -12,7 +12,7 @@ const Section: React.FC<SectionProps> = ({ children, theme, toggleTheme }) => {
   const container = useRef<any>();
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start 10%", "end start"],
+    offset: ["start 20%", "end center"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (value) => {
