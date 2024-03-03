@@ -9,6 +9,7 @@ import LandingPage from "@/components/landing-page";
 import About from "@/components/About";
 import Section from "@/components/dark-section";
 import Services from "@/components/services";
+import Projects from "@/components/projects";
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
@@ -53,6 +54,9 @@ export default function Home() {
             </Section>
             <Section theme="white" toggleTheme={setTheme}>
               <Services />
+            </Section>
+            <Section theme="dark" toggleTheme={setTheme}>
+              <Projects />
             </Section>
           </section>
         </>

@@ -47,7 +47,7 @@ const Services = () => {
         </div>
 
         <div className="flex flex-col gap-y-8 md:gap-y-0 p-4 md:p-0 md:flex-row md:gap-x-12 lg:gap-x-24 items-start justify-between py-16">
-          <div className="md:w-1/2 flex flex-col  gap-y-4">
+          <div className="md:w-1/2 flex flex-col gap-y-4">
             <h1 className="text-4xl md:text-5xl font-semibold dark:text-[#BDBDB0] flex items-center text-black">
               <div className="p-2">
                 <Rhombus />

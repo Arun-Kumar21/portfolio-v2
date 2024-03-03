@@ -7,6 +7,10 @@ hmtl {
   scroll-behavior: smooth;
 }
 
+body{
+  overflow-x: hidden
+}
+
 * {
   @apply transition-[background-color];
   @apply duration-500;

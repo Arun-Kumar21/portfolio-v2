@@ -34,7 +34,6 @@ const LandingPage = () => {
     offset: ["end end", "end start"],
   });
 
-  const textMove = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const imageMove = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
@@ -48,7 +47,6 @@ const LandingPage = () => {
             className="text-[3rem] md:text-[3.5rem] lg:text-[8vw] font-medium overflow-hidden leading-[1] my-2 flex whitespace-break-spaces"
             initial="initial"
             animate="animate"
-            style={{ y: textMove }}
           >
             {getChars("Arun Kumar")}
           </motion.h1>
@@ -58,7 +56,6 @@ const LandingPage = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            style={{ y: textMove }}
           >
             Passionate learner : Full-Stack Developer venturing into the realm
             of AI
