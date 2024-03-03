@@ -1,7 +1,6 @@
 import React from "react";
 import local from "next/font/local";
-import BigContainer from "./components/big-container";
-import FullWidthContainer from "./components/full-width-container";
+import ImageContainer from "./components/image-container";
 
 const font = local({ src: "../../app/fonts/CabinetGrotesk-Variable.woff2" });
 
@@ -15,9 +14,9 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="min-h-screen w-full py-12 grid grid-cols-12">
-          <div className="justify-center col-span-12">
-            <FullWidthContainer
+        <div className="min-h-screen w-full py-12 grid grid-cols-12 md:gap-24">
+          <div className="col-span-12">
+            <ImageContainer
               imageUrl="/images/moon-ecommerce-mockup.png"
               projectName="Moon E-commerce"
               year="2024"
@@ -26,7 +25,25 @@ const Projects = () => {
             />
           </div>
 
-          <div className=""></div>
+          <div className="col-span-6 h-full">
+            <ImageContainer
+              imageUrl="/images/moon-admin.png"
+              projectName="Admin Dashboard"
+              year="2024"
+              tags={["NextJs", "MongoDB"]}
+              url="https://ecommerce-admin-nu-pied.vercel.app/"
+            />
+          </div>
+
+          <div className="col-span-6 h-full">
+            <ImageContainer
+              imageUrl="/images/eurecah-mockup.png"
+              projectName="Eurach Clone"
+              year="2024"
+              tags={["NextJs", "Framer Motion"]}
+              url="https://ecommerce-admin-nu-pied.vercel.app/"
+            />
+          </div>
         </div>
       </div>
     </div>
