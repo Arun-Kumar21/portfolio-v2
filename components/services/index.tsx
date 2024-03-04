@@ -7,7 +7,10 @@ const font = local({ src: "../../app/fonts/CabinetGrotesk-Variable.woff2" });
 
 const Services = () => {
   return (
-    <div className="text-[#3A3733] bg-[#E2E2DD] dark:text-[#D1D1C7] w-full min-h-screen h-full dark:bg-[#0E0E0C]">
+    <div
+      id="services"
+      className="text-[#3A3733] bg-[#E2E2DD] dark:text-[#D1D1C7] w-full min-h-screen h-full dark:bg-[#0E0E0C]"
+    >
       <div className="lg:px-28 px-2">
         <div className="md:grid grid-cols-2 py-4">
           <div className={font.className && "md:col-span-1"}>

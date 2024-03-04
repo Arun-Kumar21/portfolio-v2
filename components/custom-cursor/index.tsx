@@ -8,7 +8,6 @@ interface CustomCursorProps {
 }
 
 const CustomCursor = ({ children }: CustomCursorProps) => {
-  const [scrollYValue, setScrollYValue] = useState(0);
   const [cursorText, setCursorText] = useState("");
   const [cursorVariant, setCursorVariant] = useState("default");
 
@@ -18,10 +17,7 @@ const CustomCursor = ({ children }: CustomCursorProps) => {
     leaveDelay: 100,
   });
 
-  const position = {
-    x: 0,
-    y: 0,
-  };
+  const [position , setPosition] = useState({x : 0 , y : 0});
 
   if (mouse.x !== null) {
     //@ts-ignore
@@ -39,11 +35,12 @@ const CustomCursor = ({ children }: CustomCursorProps) => {
       height: 0,
       width: 0,
       fontSize: "16px",
-      x: position.x,
-      y: position.y,
+      left: position.x,
+      top : position.y,
       transition: {
         type: "spring",
-        mass: 0.6,
+        mass: 0.1,
+        duration: 0.3
       },
     },
     project: {
@@ -54,6 +51,20 @@ const CustomCursor = ({ children }: CustomCursorProps) => {
       fontSize: "18px",
       left : position.x - 50,
       top : position.y - 50,
+      transition : {
+        duration : 0.3
+      }
+    },
+    exit: {
+      opacity: 0,
+      height: 0,
+      width: 0,
+      fontSize: "16px",
+      left: position.x,
+      top: position.y,
+      transition: {
+        duration: 0.3
+      },
     },
   };
 
@@ -70,14 +81,14 @@ const CustomCursor = ({ children }: CustomCursorProps) => {
 
   function projectLeave(event: any) {
     setCursorText("");
-    setCursorVariant("default");
+    setCursorVariant("exit");
   }
 
   return (
     <div className="w-full h-full relative" ref={ref}>
       <motion.div
         variants={variants}
-        className="z-50 fixed pointer-events-none rounded-full bg-[#81B29A] flex items-center justify-center"
+        className="z-50 fixed top-0 left-0 pointer-events-none rounded-full bg-[#81B29A] flex items-center justify-center"
         animate={cursorVariant}
         transition={spring}
       >

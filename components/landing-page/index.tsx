@@ -7,27 +7,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { letterAnimation, opacity, textUp } from "./anim";
 import { MaskContainer } from "../image-mask";
+import getChars from "@/utils/get-chars";
 
 const LandingPage = () => {
-  const getChars = (word: string) => {
-    let chars: ReactNode[] = [];
-    word.split("").forEach((char: string, i: number) => {
-      chars.push(
-        <motion.span
-          custom={[i * 0.08, (word.length - i) * 0.03]}
-          key={char + i}
-          variants={letterAnimation}
-          initial="initial"
-          animate="animate"
-        >
-          {char}
-        </motion.span>
-      );
-    });
-
-    return chars;
-  };
-
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -40,6 +22,7 @@ const LandingPage = () => {
     <div
       ref={container}
       className="w-full bg-[#E2E2DD] dark:bg-[#0E0E0C] dark:text-[#D1D1C7] text-[#3A3733] h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-2 lg:px-16 md:px-4 relative"
+      id="home"
     >
       <div className="h-3/4 w-full md:px-8 flex flex-col-reverse sm:flex-row justify-center">
         <div className="w-full h-full flex flex-col justify-end ">

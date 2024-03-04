@@ -10,6 +10,7 @@ import About from "@/components/About";
 import Section from "@/components/dark-section";
 import Services from "@/components/services";
 import Projects from "@/components/projects";
+import Footer from "@/components/footer";
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
@@ -56,6 +57,9 @@ export default function Home() {
             </Section>
             <Section theme="dark" toggleTheme={setTheme}>
               <Projects />
+            </Section>
+            <Section theme="light" toggleTheme={setTheme}>
+              <Footer />
             </Section>
           </section>
         </>

@@ -28,6 +28,7 @@ const Loader = () => {
     setTimeout(
       () => {
         setIndex(index + 1);
+        document.body.style.cursor = 'wait'
       },
       index == 0 ? 1200 : 300
     );
