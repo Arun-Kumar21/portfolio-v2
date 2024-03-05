@@ -54,16 +54,16 @@ const ContactPage = () => {
 
   return (
     <div className="w-full flex flex-col bg-[#E2E2DD] dark:bg-[#0E0E0C] dark:text-[#D1D1C7] text-[#3A3733] h-full min-h-[calc(100vh-4rem)] p-2 lg:px-16 md:px-4">
-      <div className="w-[60%] my-12">
+      <div className="md:w-[60%] my-12">
         <div className={font.className}>
-          <h1 className="lg:text-[5vw] font-bold leading-[1]">
+          <h1 className="lg:text-[5vw] text-5xl font-bold leading-[1]">
             Let{"'"}s connect to explore how I can assist you.
           </h1>
         </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-x-12">
-        <div className="col-span-6 flex flex-col justify-center gap-y-12 ">
+      <div className="md:grid grid-cols-12 gap-x-12">
+        <div className="md:col-span-6 flex flex-col justify-center gap-y-12">
           <form className="form flex flex-col gap-y-12 pb-12" onSubmit={handleSubmit}>
             <div className="flex flex-col w-full">
               <label htmlFor="name" className="text-xl">
@@ -125,7 +125,7 @@ const ContactPage = () => {
           </form>
         </div>
 
-        <div className="col-span-4">
+        <div className="pb-12 md:pb-0 md:col-span-4">
           <h1 className="text-lg md:text-2xl font-semibold uppercase">
             socials
           </h1>
