@@ -32,7 +32,7 @@ const ImageContainer = ({
               width={1920}
               height={1080}
               quality={100}
-              className="hover:rounded-xl hover:scale-105 transition duration-500 ease-in-out object-cover"
+              className="hover:scale-105 transition duration-500 ease-in-out object-cover"
             />
           </Link>
         </CustomCursor>

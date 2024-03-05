@@ -7,6 +7,8 @@ import local from "next/font/local";
 import Magnetic from "@/components/magnetic-button";
 import toast from "react-hot-toast";
 
+import {motion} from "framer-motion";
+
 const font = local({ src: "./../../fonts/CabinetGrotesk-Variable.woff2" });
 
 const ContactPage = () => {
@@ -52,13 +54,29 @@ const ContactPage = () => {
     }
   }
 
+  const headingAnim = {
+    initial : {
+      opacity : 0
+    },
+    enter : {
+      opacity : 1,
+      transition : {
+        duration : 1.5
+      }
+    }
+  }
+
   return (
     <div className="w-full flex flex-col bg-[#E2E2DD] dark:bg-[#0E0E0C] dark:text-[#D1D1C7] text-[#3A3733] h-full min-h-[calc(100vh-4rem)] p-2 lg:px-16 md:px-4">
       <div className="md:w-[60%] my-12">
         <div className={font.className}>
-          <h1 className="lg:text-[5vw] text-5xl font-bold leading-[1]">
+          <motion.h1
+            initial="initial"
+            animate="enter"
+            variants={headingAnim}
+            className="lg:text-[5vw] text-5xl font-bold leading-[1]">
             Let{"'"}s connect to explore how I can assist you.
-          </h1>
+          </motion.h1>
         </div>
       </div>
 
