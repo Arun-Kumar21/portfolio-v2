@@ -1,5 +1,5 @@
 import useMouse from "@react-hook/mouse-position";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 
@@ -10,6 +10,13 @@ interface CustomCursorProps {
 const CustomCursor = ({ children }: CustomCursorProps) => {
   const [cursorText, setCursorText] = useState("");
   const [cursorVariant, setCursorVariant] = useState("default");
+
+  useEffect(()=>{
+    window.addEventListener("mousemove" , (e)=> {
+      const {clientX , clientY} = e;
+      setPosition({x : clientX , y : clientY})
+    })
+  },[])
 
   const ref = React.useRef<any>(null);
   const mouse = useMouse(ref, {
