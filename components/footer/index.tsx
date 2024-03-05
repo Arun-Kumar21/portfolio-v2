@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import localFont from "next/font/local";
 import Link from "next/link";
@@ -10,11 +11,11 @@ const font = localFont({
 
 const Footer = () => {
   return (
-    <div className="text-[#3A3733] bg-[#E2E2DD] dark:text-[#D1D1C7] w-full min-h-screen h-full dark:bg-[#0E0E0C] relative">
+    <div className="text-[#3A3733] bg-[#E2E2DD] dark:text-[#D1D1C7] w-full flex flex-col items-center justify-between min-h-screen h-full dark:bg-[#0E0E0C] relative overflow-x-hidden">
       <div className="w-full min-h-[40vh] text-center pt-[5vh]">
         <div className={font.className}>
           <p className="md:text-3xl font-[800]">Have an Idea?</p>
-          <h1 className="lg:text-[8vw] font-[800] leading-[1] my-6 uppercase">
+          <h1 className="text-5xl lg:text-[8vw] font-[800] leading-[1] my-6 uppercase">
             Interested in working together?
           </h1>
 
@@ -28,16 +29,16 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full grid-cols-12 gap-x-6 h-full grid px-12 py-8 ">
+      <div className="w-full grid-cols-12 gap-x-6 h-full grid px-4 md:px-12 py-8">
         <div className="col-span-5">
-          <h1 className="text-2xl font-semibold uppercase">Navigation</h1>
+          <h1 className="text-lg md:text-2xl font-semibold uppercase">Navigation</h1>
           <hr className="border-[#a5a59a]" />
 
-          <ul className="flex text-start flex-col text-xl py-2 gap-y-2 font-medium">
+          <ul className="flex text-start flex-col md:text-xl py-2 gap-y-2 font-medium">
             <li>
               <Link
                 href="/#home"
-                className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
               >
                 Home
               </Link>
@@ -45,7 +46,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/#about"
-                className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
               >
                 About
               </Link>
@@ -53,7 +54,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/#about"
-                className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
               >
                 Services
               </Link>
@@ -61,7 +62,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/#projects"
-                className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
               >
                 Projects
               </Link>
@@ -70,14 +71,14 @@ const Footer = () => {
         </div>
 
         <div className="col-span-4">
-          <h1 className="text-2xl font-semibold uppercase">socials</h1>
+          <h1 className="text-lg md:text-2xl font-semibold uppercase">socials</h1>
           <hr className="border-[#a5a59a]" />
 
-          <ul className="flex text-start flex-col text-xl py-2 gap-y-2 font-medium">
+          <ul className="flex text-start flex-col md:text-xl py-2 gap-y-2 font-medium">
             <li>
               <Link
                 href="https://www.linkedin.com/in/arun-kumar-8228a0278/"
-                className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                 target="_blank"
               >
                 LinkedIn
@@ -86,7 +87,7 @@ const Footer = () => {
             <li>
               <Link
                 href="https://github.com/Arun-Kumar21"
-                className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                 target="_blank"
               >
                 GitHub
@@ -95,7 +96,7 @@ const Footer = () => {
             <li>
               <Link
                 href="https://www.instagram.com/mearun_kumar_/"
-                className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+                className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
                 target="_blank"
               >
                 Instagram
@@ -105,16 +106,16 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-between p-8 px-12">
-        <h1 className="font-bold text-[4rem] leading-[1]">
+      <div className="w-full flex items-center justify-between p-4 md:p-8 md:px-12">
+        <h1 className="font-bold text-2xl md:text-[4rem] leading-[1]">
           &copy; {new Date().getFullYear()}
           <br />
           Arun Kumar
         </h1>
 
         <div className="flex flex-col">
-          <h1 className="font-semibold text-3xl">Local Time</h1>
-          <p className="font-semibold text-xl text-neutral-500">
+          <h1 className="font-semibold text-xl md:text-3xl">Local Time</h1>
+          <p className="font-semibold text-md md:text-xl text-neutral-500">
             {new Date().toLocaleTimeString("en-IN", {
               hour: "2-digit",
               minute: "2-digit",

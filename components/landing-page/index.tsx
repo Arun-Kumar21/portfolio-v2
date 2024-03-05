@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "../button";
 import Link from "next/link";
 import Image from "next/image";
-import { letterAnimation, opacity, textUp } from "./anim";
+import { opacity, textUp } from "./anim";
 import { MaskContainer } from "../image-mask";
 import getChars from "@/utils/get-chars";
 
@@ -90,7 +90,7 @@ const LandingPage = () => {
         <p className="text-sm sm:text-[1.25rem] font-medium">
           Passionate about crafting unforgettable experiences.
         </p>
-        <Link href={"/"}>
+        <Link href={"/contact"}>
           <Button>
             <p className="font-medium text-xl">Contact</p>
           </Button>

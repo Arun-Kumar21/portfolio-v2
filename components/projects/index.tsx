@@ -29,7 +29,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="min-h-screen h-full w-full py-12 grid grid-cols-12 gap-y-12 p-4 md:gap-24 md:gap-y-32">
+        <div className="min-h-screen h-full w-full py-12 grid grid-cols-12 gap-y-12 p-4 gap-x-4 lg:gap-24">
           <div className="col-span-12">
             <ImageContainer
               imageUrl="/images/moon-ecommerce-mockup.png"
