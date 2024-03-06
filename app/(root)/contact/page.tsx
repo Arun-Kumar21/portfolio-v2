@@ -42,7 +42,6 @@ const ContactPage = () => {
     });
 
     const result = await response.json();
-    console.log(result);
 
     if (result.error) {
       toast.error("Something Wrong Went");
@@ -52,6 +51,10 @@ const ContactPage = () => {
     if (result.success) {
       toast.success("Message sent successfully");
     }
+
+    setName("");
+    setEmail("");
+    setMessage("");
   }
 
   const headingAnim = {
